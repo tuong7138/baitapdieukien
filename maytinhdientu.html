@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <textarea name="" id="hienthi" cols="31" rows="2"></textarea>
+    <br>
+    <button onclick="funcc(1)">1</button>
+    <button onclick="funcc(2)">2</button>
+    <button onclick="funcc(3)">3</button>
+    <button onclick="funcc('+')">+</button>
+    <br>
+    <button onclick="funcc(4)">4</button>
+    <button onclick="funcc(5)">5</button>
+    <button onclick="funcc(6)">6</button>
+    <button onclick="funcc('-')">-</button>
+    <br>
+    <button onclick="funcc(7)">7</button>
+    <button onclick="funcc(8)">8</button>
+    <button onclick="funcc(9)">9</button>
+    <button onclick="funcc('*')">*</button>
+    <br>
+    <button onclick="funcc1()">C</button>
+    <button onclick="funcc(0)">0</button>
+    <button onclick="funcc2()">=</button>
+    <button onclick="funcc('/')">/</button>
+    <br>
+   
+</body>
+<style>
+   button {
+    width: 55px;
+    height: 55px;
+    margin: 3px;
+   }
+   
+</style>
+</html>
+<script>
+   function funcc(so){
+    document.getElementById('hienthi').value+=so;
+   }
+   function funcc1(){
+    document.getElementById('hienthi').value='';
+   }
+   function funcc2()
+   {
+    document.getElementById('hienthi').value=eval(document.getElementById('hienthi').value);
+   }
+</script>
