@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="nd">
+    <button onclick="funcc()">check nam am</button>
+    <h2 id="ketqua"></h2>
+</body>
+</html>
+<script>
+   function funcc(){
+    let  nd=document.getElementById('nd').value;
+    let can='ha';
+    let chi='ta';
+    switch(nd%10){
+        case 0:
+        can='canh';
+        break;
+        case 1:
+        can='tan';
+        break;
+        case 2:
+        can='nham';
+        break;
+        case 3:
+        can='quy';
+        break;
+        case 4:
+        can='giap';
+        break;
+        case 5:
+        can='at';
+        break;
+        case 6:
+        can='binh';
+        break;
+        case 7:
+        can='dinh';
+        break;
+        case 8:
+        can='mau';
+        break;
+        case 9:
+        can='ky';
+        break;
+    }
+
+    switch(nd%12){
+        case 0:
+            chi='than';
+        break;
+        case 1:
+            chi='dau';
+        break;
+        case 2:
+            chi='tuat';
+        break;
+        case 3:
+            chi='hoi';
+        break;
+        case 4:
+            chi='ty';
+        break;
+        case 5:
+            chi='su';
+        break;
+        case 6:
+            chi='dan';
+        break;
+        case 7:
+            chi='meo';
+        break;
+        case 8:
+            chi='thin';
+        break;
+        case 9:
+            chi='ty';
+        break;
+        case 10:
+            chi='ngo';
+        break;
+        case 11:
+            chi='mui';
+        break;
+        
+    }
+    document.getElementById('ketqua').innerHTML='nam am lich la: ' +can +' '+ chi;
+   }
+</script>
