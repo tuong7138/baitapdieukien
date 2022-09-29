@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chuyen doi tien te</h1>
+    <table style="width: 500px; height:fit-content">
+        <tr>
+            <th>Amount</th>
+            <th>From currency</th>
+            <th colspan="2">To currency</th>
+           
+        </tr>
+        <tr>
+            <th><input type="number" id="amount"></th>
+            <th>
+                <select name="giatri1" id="from">
+                <option value="fr1">vietnam</option>
+                <option value="fr2">usd</option>
+                <option value="fr3">euro</option>
+                </select>
+                
+            </th>
+            <th>
+                <select name="giatri2" id="toto">
+                <option value="to1">vietnam</option>
+                <option value="to2">usd</option>
+                <option value="to3">euro</option>
+                </select>
+                
+            </th>
+            <th><button type="button" onclick="convert()">convert</button></th>
+        </tr>
+      
+        
+    </table>
+    <h2 id="ketqua"></h2>
+</body>
+</html>
+<script>
+   function convert(){
+    let amount=document.getElementById('amount').value;
+    let sel1= document.getElementById('from').value;
+    let sel2= document.getElementById('toto').value;
+    let rs2;
+    
+    
+   
+    switch (sel1){
+        case 'fr1': //viet nam
+            switch (sel2){
+                case 'to1'://viet nam
+                rs2=1;
+                break;
+                case 'to2'://usd
+                rs2=1/23700;
+                break;
+                case 'to3'://viet nam
+                rs2=1/23180;
+                break;
+            }
+            break;
+        case 'fr2': //usd
+            switch (sel2){
+                case 'to1'://viet nam
+                rs2=23700;
+                break;
+                case 'to2'://usd
+                rs2=1;
+                break;
+                case 'to3'://euro
+                rs2=23700/23180;
+                break;
+            }
+            break;
+        case 'fr3': //euro
+            switch (sel2){
+                case 'to1'://viet nam
+                
+                rs2=23180;
+                break;
+                case 'to2'://usd
+                rs2=23180/23700;
+                break;
+                case 'to3'://viet nam
+                rs2=1/1;
+                break;
+            }
+        break;
+        
+            
+    }
+
+    document.getElementById('ketqua').innerHTML='ket qua: ' +amount*rs2;
+   }
+
+</script>
