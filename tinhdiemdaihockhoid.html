@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>TINH DIEM DAI HOC KHOI D</H1>
+   
+        <table>
+            <th>
+                <td>Mon toan</td>
+                <td><input type="number" id="mt" ></td>
+            </th>
+            <th>
+                <td>Mon van</td>
+                <td><input type="number" id="mv"></td>
+            </th>
+            <th>
+                <td>Mon anh</td>
+                <td><input type="number" id="ma"></td>
+            </th>
+            <th>
+                <td>Khu vuc</td>
+                <td><select name="khuvuc" id="kv">
+                    <option value="kv1">KV1</option>
+                    <option value="kv2">KV2</option>
+                    <option value="kv2-nt">KV2-NT</option>
+                    <option value="kv3">KV3</option>
+                </select></td>
+            </th>
+            <th>
+                <td><button onclick="funcc()">Tinh diem</button></td>
+            </th>
+        </table>
+        <h2 id="ketqua"></h2>
+
+    
+</body>
+</html>
+<script>
+    function funcc(){
+        let mt = +document.getElementById('mt').value;
+    let mv = +document.getElementById('mv').value;
+    let ma = +document.getElementById('ma').value;
+    let kv = document.getElementById('kv').value;
+    let kq;
+    switch(kv){
+        case 'kv1':
+        document.getElementById('ketqua').innerHTML='ket qua cua ban la: '+(mt+mv+ma+0.75);
+        break;
+        case 'kv2':
+        document.getElementById('ketqua').innerHTML='ket qua cua ban la: '+(mt+mv+ma+0.25);
+        break;
+        case 'kv2-nt':
+        document.getElementById('ketqua').innerHTML='ket qua cua ban la: '+(mt+mv+ma+0.5);
+        break;
+        case 'kv3':
+        document.getElementById('ketqua').innerHTML=mt+mv+ma;
+        break;
+    }
+    }
+</script>
